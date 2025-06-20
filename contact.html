@@ -29,7 +29,7 @@
 
     .logo-title-wrapper img {
       height: 90px;
-      animation: slideLogo 1.2s ease forwards;
+      animation: slideLogo 1.5s ease forwards;
       opacity: 0;
     }
 
@@ -37,7 +37,7 @@
       font-size: 2.7rem;
       font-weight: 700;
       margin: 0;
-      animation: riseTitle 1.2s ease 0.3s forwards;
+      animation: riseTitle 1.5s ease 0.5s forwards;
       opacity: 0;
     }
 
@@ -57,9 +57,16 @@
       display: flex;
       align-items: center;
       gap: 20px;
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       font-weight: 600;
+      opacity: 0;
     }
+
+    .icon1 { animation: slideFromLeft 1s ease forwards; animation-delay: 0.3s; }
+    .icon2 { animation: slideFromRight 1s ease forwards; animation-delay: 0.6s; }
+    .icon3 { animation: slideFromLeft 1s ease forwards; animation-delay: 0.9s; }
+    .icon4 { animation: slideFromRight 1s ease forwards; animation-delay: 1.2s; }
+    .icon5 { animation: slideFromLeft 1s ease forwards; animation-delay: 1.5s; }
 
     .social-icons a {
       font-size: 2.7rem;
@@ -77,35 +84,33 @@
       transform: scale(1.2);
     }
 
-    /* Animation for logo and title */
+    /* Keyframe Animations */
     @keyframes slideLogo {
-      from {
-        transform: translateX(-50px);
-        opacity: 0;
-      }
-      to {
-        transform: translateX(0);
-        opacity: 1;
-      }
+      from { transform: translateX(-50px); opacity: 0; }
+      to   { transform: translateX(0); opacity: 1; }
     }
 
     @keyframes riseTitle {
-      from {
-        transform: translateY(40px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
+      from { transform: translateY(40px); opacity: 0; }
+      to   { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes slideFromLeft {
+      from { transform: translateX(-50px); opacity: 0; }
+      to   { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes slideFromRight {
+      from { transform: translateX(50px); opacity: 0; }
+      to   { transform: translateX(0); opacity: 1; }
     }
 
     /* Icon Colors */
-    .fa-phone { color: #28a745; }
-    .fa-whatsapp { color: #25D366; }
+    .fa-envelope  { color: #d44638; }
+    .fa-phone     { color: #28a745; }
     .fa-instagram { color: #C13584; }
-    .fa-envelope { color: #d44638; }
-    .fa-facebook { color: #3b5998; }
+    .fa-facebook  { color: #3b5998; }
+    .fa-whatsapp  { color: #25D366; }
 
     /* Responsive */
     @media (max-width: 768px) {
@@ -113,15 +118,12 @@
         font-size: 2rem;
         text-align: center;
       }
-
       h3 {
         font-size: 1.7rem;
       }
-
       .social-item {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
       }
-
       .social-icons a {
         font-size: 2.3rem;
         width: 60px;
@@ -134,28 +136,35 @@
 
 <section class="section text-center">
   <div class="container">
+    <!-- Animated Logo & Title -->
     <div class="logo-title-wrapper">
-      <img src="tclogo.png" alt="FTC Logo" class="logo-slide" />
-      <h2 class="title-slide">Telangana Caterers</h2>
+      <img src="tclogo.png" alt="FTC Logo" />
+      <h2>Telangana Caterers</h2>
     </div>
 
     <h3>Contact Us</h3>
 
+    <!-- Contact Methods with Animation -->
     <div class="social-icons">
-      <div class="social-item">
-        <a href="tel:+917569007014"><i class="fas fa-phone"></i></a><span>PHONE</span>
+      <div class="social-item icon1">
+        <a href="tel:+917569007014"><i class="fas fa-phone"></i></a>
+        <span>+91 7569007014</span>
       </div>
-      <div class="social-item">
-        <a href="https://wa.me/917569007014" target="_blank"><i class="fab fa-whatsapp"></i></a><span>WHATSAPP</span>
+      <div class="social-item icon2">
+        <a href="https://wa.me/917569007014" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <span>WhatsApp</span>
       </div>
-      <div class="social-item">
-        <a href="https://instagram.com/yourpage" target="_blank"><i class="fab fa-instagram"></i></a><span>IMSTAGRAM</span>
+      <div class="social-item icon3">
+        <a href="https://instagram.com/yourpage" target="_blank"><i class="fab fa-instagram"></i></a>
+        <span>@yourpage</span>
       </div>
-      <div class="social-item">
-        <a href="mailto:famoustelangana@gmail.com"><i class="fas fa-envelope"></i></a><span>EMAIL</span>
+      <div class="social-item icon4">
+        <a href="mailto:famoustelangana@gmail.com"><i class="fas fa-envelope"></i></a>
+        <span>famoustelangana@gmail.com</span>
       </div>
-      <div class="social-item">
-        <a href="https://facebook.com/yourpage" target="_blank"><i class="fab fa-facebook"></i></a><span>FACEBOOK</span>
+      <div class="social-item icon5">
+        <a href="https://facebook.com/yourpage" target="_blank"><i class="fab fa-facebook"></i></a>
+        <span>Facebook</span>
       </div>
     </div>
   </div>
